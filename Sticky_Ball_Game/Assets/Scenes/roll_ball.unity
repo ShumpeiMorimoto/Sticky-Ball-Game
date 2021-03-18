@@ -322,6 +322,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  MoveVector: {x: 0, y: 0, z: 0}
+  moveHorizontal: 0
+  moveVertical: 0
+  moveForceMultiplier: 5
 --- !u!54 &683444553
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -526,7 +530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e291b02652255e14a84f438d36b76105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 683444547}
+  player: {fileID: 0}
+  rotateSpeed: 3
 --- !u!1 &1641879239
 GameObject:
   m_ObjectHideFlags: 0

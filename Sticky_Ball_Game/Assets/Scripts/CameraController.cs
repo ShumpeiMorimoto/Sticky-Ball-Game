@@ -6,18 +6,31 @@ public class CameraController : MonoBehaviour
 {
     public GameObject player;
 
+    GameObject targetObj;
+    Vector3 targetPos;
+
+    public float rotateSpeed = 3.0f;
+
     private Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
     {
-        offset = transform.position - player.transform.position;
-        
+        targetObj = GameObject.Find("Player");
+        targetPos = targetObj.transform.position;
+
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        transform.position = player.transform.position + offset;
+        transform.position += targetObj.transform.position - targetPos;
+        targetPos = targetObj.transform.position;
+
+        float angelH = Input.GetAxis("Horizontal2");
+
+        transform.RotateAround(targetPos, Vector3.up, angelH * Time.deltaTime * 200f);
+
+       
     }
 }
