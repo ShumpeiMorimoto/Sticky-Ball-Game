@@ -26,6 +26,14 @@ public class PlayerController : MonoBehaviour {
 
         Move();
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("item"))
+        {
+            //pick up object becomes child of ball
+            other.transform.SetParent(this.transform);
+        }
+    }
 
     private void Move()
     {
