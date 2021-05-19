@@ -14,17 +14,27 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rb;
     private Transform camTransform;
 
+    public bool isPlaying = true;
+
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        MoveVector = PoolInput();       
-        MoveVector = RotateWithView();
+        if (isPlaying)
+        {
+            MoveVector = PoolInput();
+            MoveVector = RotateWithView();
 
-        Move();
+            Move();
+        }
+        else{
+            rb.velocity = Vector3.zero;
+        }
+        
     }
     void OnTriggerEnter(Collider other)
     {
