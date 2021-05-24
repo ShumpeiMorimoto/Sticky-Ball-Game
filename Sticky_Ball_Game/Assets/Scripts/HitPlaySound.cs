@@ -5,10 +5,13 @@ using UnityEngine;
 public class HitPlaySound : MonoBehaviour
 {
     public AudioClip sound;
+    Rigidbody rb;
+    SphereCollider col;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
@@ -17,12 +20,16 @@ public class HitPlaySound : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision otherObj)
     {
-        if (other.gameObject.tag == "item")
+        if (otherObj.gameObject.tag == "item")
         {
-            AudioSource.PlayClipAtPoint(sound, transform.position);
-            Debug.Log("Sound!!");
+            if (otherObj.rigidbody.mass < col.radius)
+            {
+                AudioSource.PlayClipAtPoint(sound, transform.position);
+                Debug.Log("Sound!!");
+            }
+                
         }
         
     }

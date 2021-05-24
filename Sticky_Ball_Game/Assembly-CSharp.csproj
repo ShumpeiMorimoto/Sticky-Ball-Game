@@ -55,17 +55,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Asset  Store\Detailed ballpoint pens\Sfx\AudioOnCollision.cs" />
      <Compile Include="Assets\NatureManufacture Assets - Trials Not Full Resolution\NatureManufacture Wind\NM_Wind.cs" />
      <Compile Include="Assets\Scripts\Air_movement.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\GameSystem.cs" />
      <Compile Include="Assets\Scripts\HitItem.cs" />
      <Compile Include="Assets\Scripts\HitPlaySound.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Random_item.cs" />
+     <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\Rotatebar.cs" />
+     <Compile Include="Assets\Scripts\Select.cs" />
      <Compile Include="Assets\Scripts\TimerText.cs" />
      <Compile Include="Assets\Scripts\ballsizetext.cs" />
      <Compile Include="Assets\Scripts\hiddenwall.cs" />
+     <Compile Include="Assets\Scripts\inputDemo.cs" />
      <None Include="Assets\NatureManufacture Assets - Trials Not Full Resolution\EasyRoads-HD_Add_ON\Shaders\Decal_Metalic_Road_Shader Parallax Trial.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

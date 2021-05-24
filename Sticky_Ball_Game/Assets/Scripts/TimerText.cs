@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class TimerText : MonoBehaviour
 {
-    private float time = 5;
+    public float time;
 
     public PlayerController PlayerController;
     public GameObject gameoverText;
+    public GameObject restartButton;
 
     // Start is called before the first frame update
     void Start()
     {
         gameoverText.SetActive(false);
+        restartButton.SetActive(false);
         GetComponent<Text>().text = ((int)time).ToString();
     }
 
@@ -34,6 +36,7 @@ public class TimerText : MonoBehaviour
     IEnumerator GameOver()
     {
         gameoverText.SetActive(true);
+        restartButton.SetActive(true);
         PlayerController.isPlaying = false;
         yield return new WaitForSeconds(2.0f);
 

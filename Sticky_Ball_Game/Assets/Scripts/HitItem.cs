@@ -5,7 +5,7 @@ using UnityEngine;
 public class HitItem : MonoBehaviour
 {
 
-    private Rigidbody rb;
+    Rigidbody rb;
     SphereCollider col;
 
     // Start is called before the first frame update
