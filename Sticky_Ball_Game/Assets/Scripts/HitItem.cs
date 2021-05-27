@@ -30,7 +30,14 @@ public class HitItem : MonoBehaviour
                 Destroy(otherObj.collider);
                 Destroy(otherObj.rigidbody);
                 otherObj.transform.parent = transform;
-                col.radius += otherObj.rigidbody.mass / 15;
+                if (otherObj.rigidbody.mass < 0.5)
+                {
+                    col.radius += otherObj.rigidbody.mass / 15;
+                }
+                if (otherObj.rigidbody.mass >= 0.8)
+                {
+                    col.radius += otherObj.rigidbody.mass / 30;
+                }
             }
 
 
